@@ -14,6 +14,7 @@ int main() {
 		{
 			cout << " ";
 		}
+
 		int val = 1;
 		for (int r = 0; r <= n; ++r)
 		{
