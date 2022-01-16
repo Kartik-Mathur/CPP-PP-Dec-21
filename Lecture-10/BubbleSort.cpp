@@ -9,7 +9,6 @@ void printArray(int a[], int n) {
 	}
 	cout << endl;
 }
-
 void BubbleSort(int a[], int n) {
 	for (int i = 0; i <= n - 2; ++i)
 	{
@@ -23,14 +22,16 @@ void BubbleSort(int a[], int n) {
 }
 
 int main() {
-
 	int a[] = {6, 5, 4, 3, 2, 1};
 	int n = sizeof(a) / sizeof(int);
-
 	printArray(a, n);
 	BubbleSort(a, n);
 	printArray(a, n);
-
+	for (int i = 0; i < n ; ++i)
+	{
+		cout << a[i] << " ";
+	}
+	cout << endl;
 
 	return 0;
 }
