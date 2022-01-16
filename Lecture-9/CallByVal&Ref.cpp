@@ -3,9 +3,7 @@
 using namespace std;
 
 void Update(int &x) {
-
 	x = x + 10;
-
 }
 
 int MeiUpdateKareBinaNhiMaanungi(int x) {

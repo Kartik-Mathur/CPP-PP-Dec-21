@@ -21,13 +21,7 @@ int ncr(int n, int r) {
 }
 
 int main() {
-
-	// int n;
-	// cin >> n;
-
 	cout << ncr(6, 2) << endl;
-	// cout << factorial(n) << endl;
-
 	return 0;
 }
 
