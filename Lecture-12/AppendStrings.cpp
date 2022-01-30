@@ -26,7 +26,7 @@ void AppendStrings(char *a, char *b) {
 
 int main() {
 
-	char a[] = "Hello";
+	char a[100] = "Hello";
 	char b[] = "World";
 
 	cout << a << endl;
