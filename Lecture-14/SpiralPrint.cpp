@@ -3,7 +3,6 @@
 using namespace std;
 
 void SpiralPrint(int a[][10], int row, int col) {
-
 	int sr, er, sc, ec;
 	sr = sc = 0;
 	er = row - 1;
