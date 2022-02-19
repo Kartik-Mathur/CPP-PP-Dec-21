@@ -8,11 +8,8 @@ void solve(int *prev, int *naya, int n, int x) {
 
 	for (int i = 0; i < n; ++i)
 	{
-		int peechla_i = (i - x);
-		if (peechla_i < 0)
-		{
-			peechla_i += n;
-		}
+		int peechla_i = [(i - x) + n] % n;
+
 		naya[i] = (prev[i] + prev[peechla_i]) % (m);
 	}
 }
