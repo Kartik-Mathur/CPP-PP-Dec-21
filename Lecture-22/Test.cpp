@@ -41,7 +41,7 @@ public:
 	}
 
 	/// Operator Overloading : D += C
-	void operator += (Car& X) {
+	void operator += (Car X) {
 		strcat(name, X.name);
 		price += X.price;
 		mileage += X.mileage;
