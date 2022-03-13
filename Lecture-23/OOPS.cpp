@@ -30,28 +30,47 @@ public:
 		cout << "Inside Copy Constructor" << endl;
 		name = new char[strlen(X.name) + 1];
 		strcpy(name, X.name);
+		// name = X.name;
 		price = X.price;
 		seats = X.seats;
 		mileage = X.mileage;
 	}
 
 	// 5. Copy Assignment Operator
-	// void operator=(Car X) {
-	// 	cout << "Inside Copy Assignment operator" << endl;
-	// 	strcpy(name, "Ferrari");
-	// 	price = X.price;
-	// 	seats = X.seats + 100;
-	// 	mileage = X.mileage;
-	// }
+	void operator=(Car X) {
+		cout << "Inside Copy Assignment operator" << endl;
+		if (name != NULL) {
+			delete []name;
+		}
+		name = new char[strlen(X.name) + 1];
+
+		strcpy(name, X.name);
+		price = X.price;
+		seats = X.seats + 100;
+		mileage = X.mileage;
+	}
 
 	/// Operator Overloading : D += C
-	// void operator += (Car X) {
-	// 	strcat(name, X.name);
-	// 	price += X.price;
-	// 	mileage += X.mileage;
-	// 	seats += X.seats;
-	// }
+	void operator += (Car X) {
+		char * temp = name;
+		name = new char[strlen(name) + strlen(X.name) + 1];
+		strcpy(name, temp);
+		strcat(name, X.name);
+		delete []temp;
 
+		price += X.price;
+		mileage += X.mileage;
+		seats += X.seats;
+	}
+	// A>B
+	bool operator>(Car X) {
+		if (price == X.price) {
+			return mileage > X.mileage;
+		}
+		else {
+			return price > X.price;
+		}
+	}
 
 	// 6. Destructor
 	~Car() {
@@ -106,8 +125,8 @@ int main() {
 	A.mileage = 6;
 
 	Car B("Maruti", 20, 5, 10);
-	Car C("Audi", 10, 3, 8);
-
+	// Car C("Audi", 10, 3, 8);
+	Car C(B);
 	Car D(B);
 
 	// Copy Assignment Operator
@@ -117,9 +136,17 @@ int main() {
 	// B.mileage = 10;
 	// B.price = 20;
 	// B.price = -100;
-	B.setPrice(2000);
-	cout << B.getPrice() << endl;
+	// D.name[0] = 'B';
+	D += B;
+	// B.setPrice(2000);
+	// cout << B.getPrice() << endl;
+	if (A > B) {
+		cout << "A, B se Achi gaadi hai" << endl;
+	}
+	else {
+		cout << "B, A se Achi gaadi hai" << endl;
 
+	}
 	A.print();
 	B.print();
 	C.print();
