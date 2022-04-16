@@ -1,7 +1,8 @@
 #include <iostream>
 #include "node.h"
 using namespace std;
-
+#ifndef MYQUEUE
+#define MYQUEUE
 template<typename T>
 class Queue
 {
@@ -48,3 +49,4 @@ public:
 	}
 
 };
+#endif

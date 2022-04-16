@@ -1,6 +1,7 @@
 // File - Queue.cpp
 #include <iostream>
 #include "MyQueue.h"
+#include "node.h"
 using namespace std;
 
 int main() {

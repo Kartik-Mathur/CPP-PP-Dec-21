@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-
+#ifndef NODE
+#define NODE
 template<typename T>
 class node
 {
@@ -13,3 +14,4 @@ public:
 	}
 
 };
+#endif
