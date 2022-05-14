@@ -54,16 +54,44 @@ int bottomUp(char a[], char b[]) {
 		}
 		cout << endl;
 	}
+	int k = dp[strlen(a)][strlen(b)];
+	char ans[100];
+	ans[k] = '\0';
+	k--;
+
+	int i = strlen(a);
+	int j = strlen(b);
+
+	while (k >= 0) {
+		if (a[i - 1] == b[j - 1]) {
+			ans[k] = a[i - 1];
+			k--;
+			i--; j--;
+		}
+		else {
+			if (dp[i - 1][j] > dp[i][j - 1]) {
+				i--;
+			}
+			else {
+				j--;
+			}
+		}
+	}
+	cout << ans << endl;
+
 	return dp[strlen(a)][strlen(b)];
 }
 
 int main() {
 
-	char a[] = "cabc", b[] = "abc";
+	char a[] = "cabcdef", b[] = "abcdef";
 	int dp[100][100];
 	memset(dp, -1, sizeof dp);
 	cout << lcs(a, b, 0, 0, dp) << endl;
 	cout << bottomUp(a, b) << endl;
+
+	// int k = bottomUp(a, b);
+
 
 	return 0;
 }
