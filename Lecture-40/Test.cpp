@@ -1,9 +1,12 @@
 #include <iostream>
 #include <unordered_map>
+#include <map>
 using namespace std;
 
 int main() {
-	unordered_map<string, int> h;
+	// map<string, int> h;
+	unodered_map<string, int> h;
+
 	// Insertion Ways
 	// 1st Way
 	h["Mango"] = 100;
@@ -27,6 +30,25 @@ int main() {
 	}
 
 
+	// print: for each loop
+	for (pair<string, int> p : h) {
+		cout << p.first << "," << p.second << endl;
+	}
+
+	for (auto p : h) {
+		cout << p.first << "," << p.second << endl;
+	}
+	h.insert({"Kiwi", 200});
+	h.insert({"Mango", 200});
+	// Print the map along with hashtable
+	// for (int i = 0; i < h.bucket_count(); ++i)
+	// {
+	// 	cout << i << "-->";
+	// 	for (auto it = h.begin(i); it != h.end(i) ; it++) {
+	// 		cout << "(" << it->first << "," << it->second << ") ";
+	// 	}
+	// 	cout << endl;
+	// }
 
 
 
