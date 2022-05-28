@@ -32,7 +32,7 @@ public:
 
 int main() {
 
-	Graph g(5 );
+	Graph g(5);
 	g.add_Edge(0, 2);
 	g.add_Edge(3, 2);
 	g.add_Edge(3, 4);
