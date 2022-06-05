@@ -87,6 +87,7 @@ public:
 int main() {
 
 	Tries t;
+	// "He";
 	t.addWord("Hell");
 	t.addWord("Hello");
 	t.addWord("Hello World");
@@ -106,7 +107,7 @@ int main() {
 	// 	}
 	// }
 
-	t.Suggestions("He");
+	t.Suggestions("Code");
 
 
 	return 0;
