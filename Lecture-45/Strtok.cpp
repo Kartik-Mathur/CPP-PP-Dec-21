@@ -8,7 +8,7 @@ int main() {
 
 	char *ptr = strtok(a, "._/$");
 	// cout << ptr << endl;
-	int x = 1;
+
 	while (ptr != NULL) {
 		cout << ptr << endl;
 
